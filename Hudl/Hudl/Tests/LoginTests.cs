@@ -28,7 +28,7 @@ namespace Hudl.Tests
         {
             Hudl.Login.Login_Function("", Environment.GetEnvironmentVariable("PASS"));
             Hudl.Login.Error_Text();
-            Thread.Sleep(500); //needed small wait to account for the animation, could be solved with a WaitForAnimationMethod
+            Thread.Sleep(1000); //needed small wait to account for the animation, could be solved with a WaitForAnimationMethod
             Assert.IsTrue(Hudl.Login.Error_Text().Text.Contains("We didn't recognize that email and/or password."));
         }
 
@@ -40,7 +40,7 @@ namespace Hudl.Tests
         {
             Hudl.Login.Login_Function(Environment.GetEnvironmentVariable("EMAIL"), "");
             Hudl.Login.Error_Text();
-            Thread.Sleep(500); //needed small wait to account for the animation, could be solved with a WaitForAnimationMethod
+            Thread.Sleep(1000); //needed small wait to account for the animation, could be solved with a WaitForAnimationMethod
             Assert.IsTrue(Hudl.Login.Error_Text().Text.Contains("We didn't recognize that email and/or password."));
         }
 
@@ -73,7 +73,7 @@ namespace Hudl.Tests
         public void NeedHelp()
         {
             Hudl.Login.NeedHelp_Link().Click();
-            Thread.Sleep(500); //needed small wait to account for the animation, could be solved with a WaitForAnimationMethod
+            Thread.Sleep(1000); //needed small wait to account for the animation, could be solved with a WaitForAnimationMethod
             Assert.IsTrue(Hudl.driver.Url.Contains("help"));
         }
 
