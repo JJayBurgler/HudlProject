@@ -116,7 +116,7 @@ namespace Hudl.Tests
         [TearDown] 
         public void TearDown() 
         {
-            Hudl.driver.Close();
+            Hudl.driver.Quit();
         }
     }
 }
